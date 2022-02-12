@@ -48,9 +48,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(
-    `mongodb+srv://academind:ORlnOPLKvIH9M9hP@cluster0-ntrwp.mongodb.net/mern?retryWrites=true&w=majority`
-  )
+  .connect(`${process.env.DB_URI}`)
   .then(() => {
     app.listen(5000);
   })
